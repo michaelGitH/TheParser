@@ -1,3 +1,5 @@
+//ParserGUI v 0.3
+
 #include "parsergui.h"
 #include "consolemode.h"
 #include <QApplication>
