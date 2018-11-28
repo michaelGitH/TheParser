@@ -1,4 +1,4 @@
-//ParserGUI v 0.3
+//ParserGUI - git test
 
 #include "parsergui.h"
 #include "consolemode.h"
