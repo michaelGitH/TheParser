@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ParserGUI</class>
+ <widget class="QMainWindow" name="ParserGUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>748</width>
+    <height>438</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ParserGUI</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Редактор</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="url_lable">
+              <property name="text">
+               <string>URL:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="url_edit">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="RegExplabel">
+              <property name="text">
+               <string>Шаблон:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="regexp_edit">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="excess_label">
+              <property name="minimumSize">
+               <size>
+                <width>41</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Шаблон исключний:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="excess_edit">
+              <property name="minimumSize">
+               <size>
+                <width>158</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <widget class="QSplitter" name="splitter">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <widget class="QWidget" name="">
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_7">
+              <item>
+               <widget class="QPushButton" name="begin_te_pushButton">
+                <property name="text">
+                 <string>В начало</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="end_te_pushButton">
+                <property name="text">
+                 <string>В конец</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="te_next_pushButton">
+                <property name="text">
+                 <string>Следующий</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="te_back_pushButton">
+                <property name="text">
+                 <string>Предыдущий</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="list_mode_pushButton">
+                <property name="text">
+                 <string>Показать все</string>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
+                </property>
+                <property name="checked">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <property name="spacing">
+               <number>3</number>
+              </property>
+              <item>
+               <widget class="QTextEdit" name="textEdit">
+                <property name="styleSheet">
+                 <string notr="true">p, li { white-space: pre; }</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Box</enum>
+                </property>
+                <property name="html">
+                 <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="SearchWidget" native="true">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="mouseTracking">
+                 <bool>false</bool>
+                </property>
+                <property name="tabletTracking">
+                 <bool>false</bool>
+                </property>
+                <layout class="QGridLayout" name="grid">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="verticalSpacing">
+                  <number>0</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QFrame" name="frame">
+                   <property name="frameShape">
+                    <enum>QFrame::Box</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_4">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLineEdit" name="FindEdit"/>
+                    </item>
+                    <item row="0" column="2">
+                     <widget class="QPushButton" name="RegSearchButton">
+                      <property name="maximumSize">
+                       <size>
+                        <width>35</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>rgx</string>
+                      </property>
+                      <property name="checkable">
+                       <bool>true</bool>
+                      </property>
+                      <property name="checked">
+                       <bool>false</bool>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="0" column="3">
+                  <widget class="QPushButton" name="FindButton_2">
+                   <property name="text">
+                    <string>Найти предыдущее</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="QPushButton" name="FindButton">
+                   <property name="maximumSize">
+                    <size>
+                     <width>55</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Найти</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_6">
+                <item>
+                 <widget class="QPushButton" name="pushButton">
+                  <property name="maximumSize">
+                   <size>
+                    <width>50</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Parse</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_2">
+                  <property name="text">
+                   <string>PushButton</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="layoutWidget">
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <item>
+               <widget class="QPushButton" name="pushButton_add">
+                <property name="maximumSize">
+                 <size>
+                  <width>20</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>+</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_del">
+                <property name="maximumSize">
+                 <size>
+                  <width>20</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>-</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="comboBox">
+                <property name="minimumSize">
+                 <size>
+                  <width>150</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="editable">
+                 <bool>true</bool>
+                </property>
+                <property name="minimumContentsLength">
+                 <number>0</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_col_up">
+                <property name="maximumSize">
+                 <size>
+                  <width>20</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>	↑</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_col_down">
+                <property name="maximumSize">
+                 <size>
+                  <width>20</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>↓</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QTableWidget" name="tableWidget">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
+              <property name="sortingEnabled">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="ExecuteButton">
+              <property name="text">
+               <string>Выполнить</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Настройки</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <widget class="QCheckBox" name="SeveralcheckBox">
+              <property name="minimumSize">
+               <size>
+                <width>142</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>142</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Страницы                       :</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="LowLabel">
+              <property name="minimumSize">
+               <size>
+                <width>12</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>12</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>С</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="LowerEdit">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>21</height>
+               </size>
+              </property>
+              <property name="inputMask">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="UpLabel">
+              <property name="text">
+               <string>По</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="UpperEdit">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>21</height>
+               </size>
+              </property>
+              <property name="inputMask">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <widget class="QCheckBox" name="HeaderCharsetCheckBox">
+              <property name="minimumSize">
+               <size>
+                <width>142</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>142</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Кодировка заголовков :</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="FromLabel_2">
+              <property name="maximumSize">
+               <size>
+                <width>12</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Из</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="HeaderCharsetComboFrom">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>21</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="ToLabel_2">
+              <property name="minimumSize">
+               <size>
+                <width>13</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>13</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>В</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="HeaderCharsetComboTo">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>21</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <item>
+             <widget class="QCheckBox" name="CharsetCheckBox">
+              <property name="minimumSize">
+               <size>
+                <width>142</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>142</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Кодировка                     :</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="FromLabel">
+              <property name="maximumSize">
+               <size>
+                <width>12</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Из</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="CharsetComboFrom">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>21</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="ToLabel">
+              <property name="minimumSize">
+               <size>
+                <width>13</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>13</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>В</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="CharsetComboTo">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>21</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <item>
+             <widget class="QCheckBox" name="ContentCharsetCheckBox">
+              <property name="minimumSize">
+               <size>
+                <width>142</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>142</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Кодировка контента    :</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="FromLabel_3">
+              <property name="maximumSize">
+               <size>
+                <width>12</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Из</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="ContentCharsetComboFrom">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>187</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>21</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <item>
+             <widget class="QCheckBox" name="LimitCheckBox">
+              <property name="minimumSize">
+               <size>
+                <width>142</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Ограничить количество соответсвий до :</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="LimitEdit">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>81</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>21</height>
+               </size>
+              </property>
+              <property name="inputMask">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="UnescapedCheckBox">
+            <property name="minimumSize">
+             <size>
+              <width>142</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Конвертация из unicode escape</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="1">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>236</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>147</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_13">
+          <item>
+           <widget class="QPushButton" name="ExecuteButton_2">
+            <property name="text">
+             <string>Выполнить</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>748</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="file_menu">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="save_action"/>
+    <addaction name="save_as_action"/>
+    <addaction name="save_script_action"/>
+    <addaction name="save_script_as_action"/>
+    <addaction name="open_action"/>
+   </widget>
+   <widget class="QMenu" name="SearchMenu">
+    <property name="title">
+     <string>Поиск</string>
+    </property>
+    <addaction name="FindAction"/>
+   </widget>
+   <addaction name="file_menu"/>
+   <addaction name="SearchMenu"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="save_action">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Сохранить</string>
+   </property>
+  </action>
+  <action name="save_as_action">
+   <property name="text">
+    <string>Сохранить как ...</string>
+   </property>
+   <property name="iconText">
+    <string>Save as ...</string>
+   </property>
+   <property name="toolTip">
+    <string>Save as ...</string>
+   </property>
+  </action>
+  <action name="save_script_action">
+   <property name="text">
+    <string>Сохранить скрипт</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="save_script_as_action">
+   <property name="text">
+    <string>Сохранить скрипт как ...</string>
+   </property>
+   <property name="iconText">
+    <string>Save script as ...</string>
+   </property>
+   <property name="toolTip">
+    <string>Save script as ...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="open_action">
+   <property name="text">
+    <string>Открыть</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="FindAction">
+   <property name="text">
+    <string>Найти</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
